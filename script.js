@@ -82,6 +82,17 @@ const displayMovements = function(movements) {
 };
 displayMovements(account1.movements);
 
+const createUsernames = function(accs) {
+  accs.forEach(function(acc) {
+    acc.username = acc.owner
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0])
+    .join(''); 
+  });
+};
+createUsernames(accounts); // stw
+console.log(accounts);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -220,6 +231,7 @@ const eurToUsd = 1.1;
 //  return mov * eurToUsd;
 // });
 
+/*
 const movementsUSD = movements.map(mov => mov * eurToUsd); 
 
 console.log(movements);
@@ -236,7 +248,7 @@ const movementsDescriptions = movements.map((mov, i) =>
     )}`
 );
 console.log(movementsDescriptions);
-
+*/
 
 
 
